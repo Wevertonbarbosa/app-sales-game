@@ -4,6 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { WebSocketService } from 'src/app/service/websocket.service';
+import {
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonContent,
+  IonItem,
+  IonInput,
+  IonLabel,
+  IonButton,
+} from '@ionic/angular/standalone';
 
 interface Player {
   name: string;
@@ -15,7 +25,7 @@ interface Player {
   templateUrl: './game.page.html',
   styleUrls: ['./game.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, FormsModule],
+  imports: [CommonModule, IonicModule, FormsModule, IonHeader, IonTitle, IonToolbar, IonContent, IonItem, IonInput, IonLabel, IonButton],
 })
 export class GamePage implements OnInit {
   players: Player[] = [];
@@ -58,8 +68,6 @@ export class GamePage implements OnInit {
     if (!this.playerName || !this.roomPin) return;
 
     this.connected = true;
-
-    
 
     this.players.push({ name: this.playerName, position: 0 });
     this.wsService.connect(this.roomPin);
