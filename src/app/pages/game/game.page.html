@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Jogo Multiplayer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Seu nome</ion-label>
+    <ion-input [(ngModel)]="playerName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">PIN da Sala</ion-label>
+    <ion-input [(ngModel)]="roomPin"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="connectToRoom()" [disabled]="connected">
+    Conectar e Entrar na Sala
+  </ion-button>
+
+  <div *ngIf="connected">
+    <h2>Rodada {{ round }} / {{ maxRounds }}</h2>
+
+    <div *ngFor="let player of players; let i = index">
+      <p>
+        <strong>{{ player.name }}</strong> - Casa: {{ player.position }}
+        <span *ngIf="i === currentPlayerIndex">🎯 Sua vez</span>
+      </p>
+    </div>
+
+    <ion-button expand="block" (click)="rollDice()">
+      Jogar Dado
+    </ion-button>
+
+    <div *ngIf="lastRoll">
+      <p>🎲 Resultado do dado: {{ lastRoll }}</p>
+    </div>
+
+    <div *ngIf="round > maxRounds">
+      <h3>Fim do jogo!</h3>
+      <p>Vencedor: {{ winner?.name }} 🏆</p>
+      <ion-button (click)="restart()">Voltar para início</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,21 @@
+:host {
+  --dark-blue: #0a0a59;
+  --orange: #f4511e;
+  --text-white: #ffffff;
+  --text-blue: #1e2a78;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-blue);
+  height: 100%;
+  text-align: center;
+  color: var(--text-white);
+}
+
+
+.game {
+  background-color: var(--orange);
+  color: white;
+  border-radius: 1px;
+}
