@@ -41,7 +41,8 @@
  *  (window as any).__Zone_enable_cross_context_check = true;
  *
  */
-
+import '@angular/localize/init';
+import '@webcomponents/custom-elements';
 import './zone-flags';
 
 /***************************************************************************************************
