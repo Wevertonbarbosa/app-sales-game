@@ -25,7 +25,18 @@ interface Player {
   templateUrl: './game.page.html',
   styleUrls: ['./game.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, FormsModule, IonHeader, IonTitle, IonToolbar, IonContent, IonItem, IonInput, IonLabel, IonButton],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    IonContent,
+    IonItem,
+    IonInput,
+    IonLabel,
+    IonButton,
+  ],
 })
 export class GamePage implements OnInit {
   players: Player[] = [];

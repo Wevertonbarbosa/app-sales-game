@@ -10,7 +10,7 @@ import { IonButton, IonContent } from '@ionic/angular/standalone';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, IonButton, IonContent],
+  imports: [CommonModule, FormsModule, IonButton, IonContent],
 })
 export class HomePage implements OnInit {
   constructor(private router: Router) {}
